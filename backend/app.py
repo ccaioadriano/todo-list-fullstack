@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -7,9 +7,17 @@ api = "tarefas"
 
 @app.route("/tarefas")
 def home():
-    return {
-        "message": "Ola Mundo"
-    }
+
+    tasks = [
+        {
+            "id": 1,
+            "title": "Title",
+            "description": "Description",
+            "completed": True,
+        }
+    ]
+
+    return jsonify(tasks)
 
 
 if __name__ == '__main__':
