@@ -6,8 +6,10 @@ api = "tarefas"
 
 
 @app.route("/tarefas")
-def home():
+def getAllTasks():
 
+    # Fazer um Select no BD
+    
     tasks = [
         {
             "id": 1,
@@ -18,6 +20,18 @@ def home():
     ]
 
     return jsonify(tasks)
+
+
+@app.route("/tarefas/<int:id_task>")
+def getTaskById(id_task):
+
+    #Fazer um metodo que busca uma task via id no BD
+    return jsonify({
+        "id": id_task,
+        "title": "Task via parametro",
+        "description": "Task Passada via URL",
+        "completed": False,
+    })
 
 
 if __name__ == '__main__':
