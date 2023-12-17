@@ -1,6 +1,5 @@
 import Card from "./components/Task";
 import TodoList from "./components/TodoList";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
